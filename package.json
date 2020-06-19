@@ -26,6 +26,7 @@
     ]
   },
   "dependencies": {
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.19",
@@ -42,9 +43,14 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/storybook__addon-info": "^5.2.1",
+    "antd": "^4.3.4",
+    "css-loader": "^3.6.0",
+    "less": "^3.11.3",
+    "less-loader": "^6.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "style-loader": "^1.2.1",
     "typescript": "~3.7.2"
   }
 }
