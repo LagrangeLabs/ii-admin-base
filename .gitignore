@@ -4,3 +4,6 @@ node_modules/
 
 
 .vscode
+
+
+src/react-app-env.d.ts

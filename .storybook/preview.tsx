@@ -12,7 +12,7 @@ addParameters({
   info: {
     inline: true, // 直接展示所有信息
     header: false, // 隐藏组件名称和组件描述
-    source: false,
+    source: true,
   },
 });
 
