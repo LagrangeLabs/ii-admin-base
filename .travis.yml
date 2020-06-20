@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - 'stable'
+cache:
+  directories:
+    - node_modules
+
+# 设置环境变量
+env:
+  - CI=true
+
+script:
+  # 默认运行npm run build脚本
+  - npm run build-storybook
+
+deploy:
+  provider: script
+  # do not delete the built assets
+  skip_cleanup: true
+  script: bash scripts/deploy.sh
+  on:
+    # 表示哪个branch有push的时候，触发deploy操作
+    branch: master

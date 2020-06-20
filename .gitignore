@@ -7,3 +7,7 @@ node_modules/
 
 
 src/react-app-env.d.ts
+
+
+# story-book
+storybook-static/
