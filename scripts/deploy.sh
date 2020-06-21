@@ -2,14 +2,14 @@
 set -e
 
 # setup ssh-agent and provide the GitHub deploy key
-openssl aes-256-cbc -K $encrypted_2277b1c8774a_key -iv $encrypted_2277b1c8774a_iv -in ssh.enc -out ssh -d
+openssl aes-256-cbc -K $encrypted_fc7f0aafbcdc_key -iv $encrypted_fc7f0aafbcdc_iv -in config/travis/deploy.enc -out config/travis/deploy -d
 
 # 对解密后的私钥添加权限
-chmod 600 ssh
+chmod 600 config/travis/deploy
 
 eval "$(ssh-agent -s)"
 
-ssh-add ssh
+ssh-add config/travis/deploy
 
 rm ssh
 git config --global user.name 'Travis'  
