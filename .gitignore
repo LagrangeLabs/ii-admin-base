@@ -13,5 +13,5 @@ src/react-app-env.d.ts
 storybook-static/
 
 # ssh
-ssh
-ssh.pub
+config/travis/deploy
+config/travis/deploy.pub

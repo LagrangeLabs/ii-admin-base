@@ -11,7 +11,9 @@ eval "$(ssh-agent -s)"
 
 ssh-add config/travis/deploy
 
-rm ssh
+# 删除解密后的密钥
+rm config/travis/deploy
+
 git config --global user.name 'Travis'  
 git config --global user.email 'travis@travis-ci.com' 
 
