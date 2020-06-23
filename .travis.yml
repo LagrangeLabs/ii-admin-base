@@ -7,7 +7,6 @@ cache:
 env:
   matrix:
     - CI=true
-
 script:
   - npm run build-storybook
 deploy:
