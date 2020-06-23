@@ -7,11 +7,12 @@ openssl aes-256-cbc -K $encrypted_fc7f0aafbcdc_key -iv $encrypted_fc7f0aafbcdc_i
 # 对解密后的私钥添加权限
 chmod 600 config/travis/deploy
 
+# 启动 ssh-agent
 eval "$(ssh-agent -s)"
 
 ssh-add config/travis/deploy
 
-# 删除解密后的密钥
+# 删除解密后的私钥
 rm config/travis/deploy
 
 git config --global user.name 'Travis'  
