@@ -1,14 +1,16 @@
 language: node_js
 node_js:
-  - 'stable'
+  - stable
 cache:
   directories:
     - node_modules
 
 # 设置环境变量
 env:
-  - CI=true
-
+  matrix:
+    - CI=true
+  global:
+    secure: GLSzzpvKznPHExDrSfEUUyenWtgbl62qlBifXCwEfqUVxWUOzU/0W3i6fovgnsVXJjxRJxaEjVv+oYMb5d2tR8qcHU36lQuj60dEcjvAaFvWu7s5CoUlC5KP07v+wnXAOhjNIUCIEiaF/6U6d0oo+47w1McoxDqiflJP4uo2nSeBgMHXiOX75Ny2RsLhsxgzFWlfRQrEJdGcPVcfTL9AVbTm0DYnVvtOvh+ZJQ2Wr9Na5Aj2EYqUUhS08M26c1rdO/+U8fWghvG4Y1j6zGoUYsngzOlKCmkUhKSIp2gIKCEEi24HCkIUBa58gbojUd4VDnS1f15mseWEh1gdzoel2/AKnuNqs81PM9EsUUgIuZw0LeegLNuFg5wNduQQgspe0z1b5zcPLsQDWffm16RFgxFjNDl+gplUR1vLEGEBUi7WvTQITIDp05KeeJT2Kd+fJT/mXPb3lHENESixR6eo2szLBUpArNE6iPIV4kIE/VbmhhFA8ZueeZQI7C/z9Gftcd2nCvF7qRPdHdhYBkzSrwZkHGeNo/r5WKisa3o+Juhon4aJltUjZyZvSeyfjWsCGr+6r7BE7E27dGpw9yw1ilAgbL5lnOv6KiJJL1qWZndkMvJ0mzJ2azwCTRzfoIO5uzmn68xz4gkYA75djMlKkGnadFUzee0/CUfXbnOZaLA=
 script:
   # 默认运行npm run build脚本
   - npm run build-storybook
