@@ -4,17 +4,21 @@ node_js:
 cache:
   directories:
     - node_modules
+
+# 设置环境变量
 env:
   matrix:
     - CI=true
+
 script:
+  # 默认运行编译脚本
   - npm run build-storybook
+
 deploy:
   provider: script
+  # Do not delete the build assets
   skip_cleanup: true
   script: bash scripts/deploy.sh
   on:
+    # 当 master 有 push 的时候，触发 deploy 操作
     branch: master
-before_install:
-  - openssl aes-256-cbc -K $encrypted_fc7f0aafbcdc_key -iv $encrypted_fc7f0aafbcdc_iv
-    -in deploy.enc -out deploy -d
