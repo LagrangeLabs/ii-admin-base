@@ -4,7 +4,7 @@ set -e
 openssl version
 
 # setup ssh-agent and provide the GitHub deploy key
-openssl aes-256-cbc -k $super_secret_password -in config/travis/deploy.enc -out config/travis/deploy -d
+openssl aes-256-cbc -k "$super_secret_password" -in config/travis/deploy.enc -out config/travis/deploy -d
 
 # 对解密后的私钥添加权限
 chmod 600 config/travis/deploy
