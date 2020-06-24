@@ -15,10 +15,18 @@ script:
   - npm run build-storybook
 
 deploy:
-  provider: script
-  # Do not delete the build assets
-  skip_cleanup: true
-  script: bash scripts/deploy.sh
-  on:
-    # 当 master 有 push 的时候，触发 deploy 操作
-    branch: master
+  # 发布到 gh-pages 上
+  - provider: script
+    # Do not delete the build assets
+    skip_cleanup: true
+    script: bash scripts/deploy.sh
+    on:
+      # 当 master 有 push 的时候，触发 deploy 操作
+      branch: master
+  # 发布到 npm 上
+  - provider: npm
+    email: '$NPM_EMAIL'
+    api_key: 'NPM_API_TOKEN'
+    skip_cleanup: true
+    on:
+      branch: master
