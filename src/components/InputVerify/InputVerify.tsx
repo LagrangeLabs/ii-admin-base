@@ -3,8 +3,6 @@ import { Input } from 'antd';
 import { InputProps } from 'antd/lib/input';
 import classNames from 'classnames';
 
-import './style.less';
-
 export interface InputVerifyProps extends InputProps {
   /** 发送验证码接口函数 */
   sendCode: () => void;

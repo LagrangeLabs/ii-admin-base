@@ -1,0 +1,24 @@
+/**
+ * 用于最后打包编译
+ */
+{
+  "compilerOptions": {
+    // 文件输出目录
+    "outDir": "dist",
+    // ESNext: 是标准的ES Modules形式
+    "module": "esnext",
+    // 指定编译以后符合什么样的ES标准
+    "target": "es5",
+    // 为每一个js文件生成一个对应的.d.ts类型文件，方便使用组件库的用户可以获得类型检查和ts提示
+    "declaration": true,
+    // jsx 是一种语法糖，是React.createElement的缩写。此处置为react，编译出来的文件就可以用React.createElement来代替JSX语法的过程
+    "jsx": "react",
+    // tsc 处理模块的方式和node不一样，默认处理方式是"classic"，针对绝对路径有的时候会找不到文件(一直向上找文件)，所以需设置成'node'。
+    "moduleResolution": "node",
+    // 默认不支持 import React from 'react'，只支持 import * as React from 'react'
+    "allowSyntheticDefaultImports": true
+  },
+  // 要编译哪些文件
+  "include": ["src"],
+  "exclude": ["src/**/*.test.tsx", "src/**/*.stories.tsx"]
+}

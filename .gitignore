@@ -15,3 +15,6 @@ storybook-static/
 # ssh
 config/travis/deploy
 config/travis/deploy.pub
+
+# dist
+dist/
