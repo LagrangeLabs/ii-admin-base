@@ -1,6 +1,25 @@
 {
   "name": "ii-admin-base",
   "version": "0.1.0",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "A library of react components, which mainly stores components that can be reused by all business lines of AI-Indeeded Company.",
+  "author": "ShiMu",
+  "license": "MIT",
+  "keywords": [
+    "React",
+    "Component"
+  ],
+  "homepage": "https://lagrangelabs.github.io/ii-admin-base",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LagrangeLabs/ii-admin-base.git"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
@@ -13,6 +32,10 @@
     "build-storybook": "build-storybook -s public",
     "prepublish": "npm run build"
   },
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0",
+    "antd": ">= 4.3.4"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,6 +81,7 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "rimraf": "^3.0.2",
     "style-loader": "^1.2.1",
     "typescript": "~3.7.2"
   }
