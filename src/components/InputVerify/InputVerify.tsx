@@ -22,7 +22,7 @@ export interface InputVerifyProps extends InputProps {
  * ### 如何引用
  *
  * ~~~javascript
- * import { InputVerfiy } from 'ii-admin-base'
+ * import { InputVerify } from 'ii-admin-base'
  * ~~~
  */
 export const InputVerify: FC<InputVerifyProps> = (props) => {
@@ -64,6 +64,7 @@ export const InputVerify: FC<InputVerifyProps> = (props) => {
 
   return (
     <Input
+      data-testid="test-input-verify"
       {...restProps}
       suffix={
         <span className={codeCls} onClick={handleCodeClick}>

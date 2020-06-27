@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "clean": "rimraf ./dist",
@@ -33,9 +33,9 @@
     "prepublish": "npm run build"
   },
   "peerDependencies": {
+    "antd": ">= 4.3.4",
     "react": ">= 16.8.0",
-    "react-dom": ">= 16.8.0",
-    "antd": ">= 4.3.4"
+    "react-dom": ">= 16.8.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -75,6 +75,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "gh-pages": "^3.0.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "less": "^3.11.3",
     "less-loader": "^6.1.1",
     "react": "^16.13.1",
