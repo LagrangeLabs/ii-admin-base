@@ -60,7 +60,8 @@
     ]
   },
   "dependencies": {
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "cross-env": "^7.0.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "5.3.18",
@@ -80,7 +81,6 @@
     "@types/storybook__addon-info": "^5.2.1",
     "antd": "^4.3.4",
     "babel-loader": "^8.1.0",
-    "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
     "gh-pages": "^3.0.0",
     "husky": "^4.2.5",
