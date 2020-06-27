@@ -1,6 +1,6 @@
 {
   "name": "ii-admin-base",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -23,14 +23,21 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test:nowatch": "cross-env CI=true npm run test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "clean": "rimraf ./dist",
+    "lint": "eslint --ext js,ts,tsx, src --max-warnings 5",
     "build:ts": "tsc -p tsconfig.build.json",
     "build:css": "lessc ./src/styles/index.less ./dist/index.css",
     "build": "npm run clean && npm run build:ts && npm run build:css",
     "build-storybook": "build-storybook -s public",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:nowatch && npm run lint"
+    }
   },
   "peerDependencies": {
     "antd": ">= 4.3.4",
@@ -73,6 +80,7 @@
     "@types/storybook__addon-info": "^5.2.1",
     "antd": "^4.3.4",
     "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
     "gh-pages": "^3.0.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
