@@ -25,8 +25,9 @@ deploy:
       branch: master
   # 发布到 npm 上
   - provider: npm
-    email: '$NPM_EMAIL'
-    api_key: 'NPM_API_TOKEN'
-    skip_cleanup: true
+    email: aisi@mail.i-i.ai
+    api_key:
+      secure: Lsb1/coESXgnDgcotaObyV6QKDVeZJWpAcduyZt/bxAqspN/EdOR2duraPpBHKzme7tOHT2ybIAQusJqSl36K/WX2WFXqhKHw+FoFOobK1aa/azQDkpwllgdxrlx0fCbLpxBPDdKxbJspXwphSgCi2rjY8F/PBdy4+g8IEh/FJQckuFHAEhpTuk+SZPJT5eAqhctxXSaNKB71x4vX9AJLHRT791nB388dsjKOz2NWGNJ14arxukvnb/Yt02hHWKpGQPgQQY9QjfENYnspFYBXYssKV2nhC+0EFoXNn6UK3C4gXo96hV2yqFbP0AhZdHiYxOJ/v1KN7xt+I3popw+puETFyno4TgepGqU/EvkB5r3DnB9CrYsOpeN4+wZtfVtwxMxxxJ8q/EbC7RH45b39056B0i7PnJViIHLWps3XxFQ/bi1CgWdiFyzNofwCYVV6uT0UNR0XZDqUzre10GBrvDogMNWPKMaTmJCWVA8c6AkB4XjfU/jY1xaWxbNuD+Z+p3uLSTKm+c2xrUJFl5KW4/ocyS8No/J+e/9uNkXYcTEdkwnBioWfT7OaBrIpzrkKL9RftkDzjkeUo8h9/XpXNHEUGMK6ZDO0n3zlQ8/qcMHJvS5dXbKmvwZ9GNnOS1EvR1X32MlTfcW0EzDgCXufyAK6UdUGm7jm+dfJJkD60g=
     on:
       branch: master
+      repo: LagrangeLabs/ii-admin-base
