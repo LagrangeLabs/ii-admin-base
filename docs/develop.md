@@ -26,4 +26,4 @@
 
 ## 三、更多资料
 
-- [如何搭建团队 UI 组件库](https://www.yuque.com/qg0ivw/ky9k8b/sf4sdi)
+- [如何搭建团队 UI 组件库](https://www.yuque.com/qg0ivw/ky9k8b/rn9whn)
