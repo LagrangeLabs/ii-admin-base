@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "test:nowatch": "cross-env CI=true npm run test",
+    "test:nowatch": "./node_modules/.bin/cross-env CI=true npm run test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "clean": "rimraf ./dist",
