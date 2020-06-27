@@ -83,6 +83,7 @@
     "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
     "gh-pages": "^3.0.0",
+    "husky": "^4.2.5",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "less": "^3.11.3",
     "less-loader": "^6.1.1",
