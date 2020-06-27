@@ -11,3 +11,7 @@ import { InputVerfiy } from 'ii-admin-base'
 import 'ii-admin-base/dist/index.css'
 import 'antd/dist/antd.css'
 ```
+
+**注：**
+
+- [开发文档](https://github.com/LagrangeLabs/ii-admin-base/blob/master/docs/develop.md)
