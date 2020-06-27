@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 export interface InputVerifyProps extends InputProps {
   /** 发送验证码接口函数 */
-  sendCode: () => void;
+  sendCode?: () => void;
   /** 倒计时时间 */
   countDown?: number;
   /** 初始验证码文本内容 */
