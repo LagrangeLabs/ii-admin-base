@@ -19,5 +19,5 @@ ssh-add deploy
 # 删除解密后的私钥
 rm deploy
 
-# commit the assets in storybook-static/ to the gh-pages branch and push to GitHub using SSH
-./node_modules/.bin/gh-pages -d storybook-static/ -b gh-pages -r git@github.com:${TRAVIS_REPO_SLUG}.git
+# commit the assets in docs-dist/ to the gh-pages branch and push to GitHub using SSH
+./node_modules/.bin/gh-pages -d docs-dist/ -b gh-pages -r git@github.com:${TRAVIS_REPO_SLUG}.git

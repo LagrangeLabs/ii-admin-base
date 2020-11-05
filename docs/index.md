@@ -8,17 +8,17 @@
 
 本地开发调试。
 
-> yarn storybook
+> yarn start
 
 运行单元测试。
 
-> yarn test
+> yarn run test
 
 ## 二、常用命令
 
 生成静态文档页面。
 
-> yarn build-storybook
+> yarn docs:build
 
 打包构建。
 

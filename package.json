@@ -3,8 +3,8 @@
   "version": "1.0.2",
   "private": false,
   "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
   "description": "A library of react components, which mainly stores components that can be reused by all business lines of AI-Indeeded Company.",
   "author": "ShiMu",
   "license": "MIT",
@@ -12,6 +12,17 @@
     "React",
     "Component"
   ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
   "homepage": "https://lagrangelabs.github.io/ii-admin-base",
   "repository": {
     "type": "git",
@@ -21,78 +32,42 @@
     "dist"
   ],
   "scripts": {
-    "start": "react-scripts start",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "test:nowatch": "./node_modules/.bin/cross-env CI=true npm run test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
-    "clean": "rimraf ./dist",
-    "lint": "eslint --ext js,ts,tsx, src --max-warnings 5",
-    "build:ts": "tsc -p tsconfig.build.json",
-    "build:css": "lessc ./src/styles/index.less ./dist/index.css",
-    "build": "npm run clean && npm run build:ts && npm run build:css",
-    "build-storybook": "build-storybook -s public",
-    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "build": "father-build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "release": "npm run build && npm publish",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "prepublishOnly": "npm run build"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run test:nowatch && npm run lint"
     }
   },
-  "peerDependencies": {
-    "antd": ">= 4.3.4",
-    "react": ">= 16.8.0",
-    "react-dom": ">= 16.8.0"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "dependencies": {
-    "classnames": "^2.2.6"
+
+  },
+  "peerDependencies": {
+    "antd": "^4.7.3",
+    "lodash": "^4.17.20",
+    "react": "^16.12.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.3.18",
-    "@storybook/addon-info": "5.3.18",
-    "@storybook/addon-links": "5.3.18",
-    "@storybook/addons": "5.3.18",
-    "@storybook/preset-create-react-app": "2.1.1",
-    "@storybook/react": "5.3.18",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/classnames": "^2.2.10",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/storybook__addon-info": "^5.2.1",
-    "antd": "^4.3.4",
-    "babel-loader": "^8.1.0",
-    "cross-env": "^7.0.2",
-    "css-loader": "^3.6.0",
+    "@umijs/test": "^3.0.5",
+    "dumi": "^1.0.10",
+    "father-build": "^1.17.2",
     "gh-pages": "^3.0.0",
-    "husky": "^4.2.5",
-    "jest-environment-jsdom-sixteen": "^1.0.3",
-    "less": "^3.11.3",
-    "less-loader": "^6.1.1",
-    "react": "^16.13.1",
-    "react-docgen-typescript-loader": "^3.7.2",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "rimraf": "^3.0.2",
-    "style-loader": "^1.2.1",
-    "typescript": "~3.7.2"
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "yorkie": "^2.0.0",
+
+    "antd": "^4.7.3",
+    "lodash": "^4.17.20",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }

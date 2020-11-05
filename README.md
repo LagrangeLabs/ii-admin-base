@@ -14,4 +14,4 @@ import 'antd/dist/antd.css'
 
 **注：**
 
-- [开发文档](https://github.com/LagrangeLabs/ii-admin-base/blob/master/docs/develop.md)
+- [开发文档](https://github.com/LagrangeLabs/ii-admin-base/blob/master/docs/index.md)
