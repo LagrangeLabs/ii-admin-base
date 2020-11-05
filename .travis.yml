@@ -12,7 +12,7 @@ env:
 
 script:
   # 默认运行编译脚本
-  - npm run build-storybook
+  - npm run docs:build
 
 deploy:
   # 发布到 gh-pages 上
