@@ -48,26 +48,27 @@
       "pre-commit": "npm run test:nowatch && npm run lint"
     }
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "peerDependencies": {
     "antd": "^4.7.3",
     "lodash": "^4.17.20",
-    "react": "^16.12.0"
+    "react": "^16.12.0",
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
     "@umijs/test": "^3.0.5",
+    "antd": "^4.7.3",
+    "classnames": "^2.2.6",
     "dumi": "^1.0.10",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "father-build": "^1.17.2",
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1",
-    "yorkie": "^2.0.0",
-
-    "antd": "^4.7.3",
     "lodash": "^4.17.20",
+    "prettier": "^1.19.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "yorkie": "^2.0.0"
   }
 }

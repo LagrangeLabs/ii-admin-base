@@ -12,6 +12,11 @@ import 'ii-admin-base/dist/index.css'
 import 'antd/dist/antd.css'
 ```
 
+#### 组件单元测试
+
+采用[jest](https://jestjs.io/docs/en/api) + [enzyme](https://enzymejs.github.io/enzyme/)方案
+
 **注：**
 
 - [开发文档](https://github.com/LagrangeLabs/ii-admin-base/blob/master/docs/index.md)
+- 第三方依赖若不想重复安装，可以选择安装在 devDependencies，还需放到 peerDependencies 中，否则对于 cmj 输出的包，module 编译会报错
