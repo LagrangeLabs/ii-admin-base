@@ -1,4 +1,16 @@
-# ii-admin-base(中后台基础组件库)
+---
+title: 中后台基础组件库
+order: 10
+hero:
+  title: ii-admin-base
+  desc: 中后台基础组件库
+  actions:
+    - text: 快速上手
+      link: /components
+footer: Open-source MIT Licensed | Copyright © 2019-present<br />Powered by self
+---
+
+## ii-admin-base(中后台基础组件库)
 
 ## 一、项目启动
 
