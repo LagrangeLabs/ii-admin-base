@@ -1,6 +1,7 @@
 export default {
   '/components': [
     {
+      title: '组件总览',
       children: ['components/index'],
     },
     {
