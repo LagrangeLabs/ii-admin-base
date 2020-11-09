@@ -10,7 +10,12 @@ export default {
     },
     {
       title: '数据录入组件',
-      children: ['components/input-verify', 'components/select-search'],
+      children: [
+        'components/input-verify',
+        'components/select-search',
+        'components/my-upload',
+        'components/my-form',
+      ],
     },
   ],
 };
