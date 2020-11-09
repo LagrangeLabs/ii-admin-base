@@ -134,7 +134,17 @@ export default () => {
 };
 ```
 
-<API src='../../src/MyForm/V4/index.tsx'></API>
+<!-- <API src='../../src/MyForm/V4/index.tsx'></API> -->
+
+### From props 说明
+
+| 属性           | 说明                       | 类型                                                         | 默认值 | 版本 |
+| -------------- | -------------------------- | ------------------------------------------------------------ | ------ | ---- |
+| list           | list form 各个 item 配置   | (FormItem & SearchProps)[]                                   |        |      |
+| form           | form 表单实例              | FormInstance                                                 |        |      |
+| formItemLayout | form 布局配置              | { labelCol: { span: number }; wrapperCol: { span: number } } |        |      |
+| initialValues  |                            | object                                                       |        |      |
+| showCol        | item 一行是否展示多个 item | boolean                                                      |        |      |
 
 ### FormItem 类型说明
 
@@ -168,9 +178,9 @@ export default () => {
 
 #### type 为 richtext
 
-| 属性        | 说明                     | 类型                          | 默认值 | 版本 |
-| ----------- | ------------------------ | ----------------------------- | ------ | ---- |
-| uploadImage | uploadImage 上传图片方法 | (params: any) => Promise<any> |        |      |
+| 属性        | 说明                     | 类型                       | 默认值 | 版本 |
+| ----------- | ------------------------ | -------------------------- | ------ | ---- |
+| uploadImage | uploadImage 上传图片方法 | (params: any) => Promise<> |        |      |
 
 #### type 为 phone
 
