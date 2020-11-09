@@ -1,5 +1,7 @@
 import { defineConfig } from 'dumi';
 
+import menus from './config/menus.js';
+
 export default defineConfig({
   title: 'ii-admin-base',
   favicon:
@@ -10,6 +12,8 @@ export default defineConfig({
   publicPath: '/ii-admin-base/',
   base: '/ii-admin-base',
   history: { type: 'hash' },
+  mode: 'site',
+  menus,
   styles: ['https://cdn.bootcdn.net/ajax/libs/antd/4.7.0/antd.min.css'],
   // more config: https://d.umijs.org/config
 });

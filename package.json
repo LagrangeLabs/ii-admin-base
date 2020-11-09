@@ -1,6 +1,6 @@
 {
   "name": "ii-admin-base",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -50,18 +50,20 @@
   },
   "dependencies": {},
   "peerDependencies": {
+    "@ant-design/icons": "^4.2.2",
     "antd": "^4.7.3",
     "lodash": "^4.17.20",
     "react": "^16.12.0",
     "classnames": "^2.2.6"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.2.2",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.1",
     "@umijs/test": "^3.0.5",
     "antd": "^4.7.3",
     "classnames": "^2.2.6",
-    "dumi": "^1.0.10",
+    "dumi": "^1.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "father-build": "^1.17.2",

@@ -4,7 +4,6 @@ node_js:
 cache:
   directories:
     - node_modules
-
 # 设置环境变量
 env:
   matrix:
