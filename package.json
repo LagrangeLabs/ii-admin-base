@@ -1,6 +1,6 @@
 {
   "name": "ii-admin-base",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -64,6 +64,7 @@
     "antd": "^4.7.3",
     "classnames": "^2.2.6",
     "dumi": "^1.1.0-beta.31",
+    "dumi-theme-default": "^1.0.0-beta.15",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "father-build": "^1.17.2",
