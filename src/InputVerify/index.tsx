@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react';
-import { Input } from 'antd';
+import { Input, message } from 'antd';
 import { InputProps } from 'antd/lib/input';
 import classNames from 'classnames';
 
@@ -13,6 +13,8 @@ export interface InputVerifyProps extends InputProps {
   initCodeText?: string;
   /** 重新发送验证码文本内容 */
   reCodeText?: string;
+  /** 校验手机号格式 */
+  checkPhone?: () => boolean;
   /** 验证码类名 */
   codeClassname?: string;
 }
@@ -33,6 +35,7 @@ export const InputVerify: FC<InputVerifyProps> = props => {
     initCodeText,
     reCodeText,
     codeClassname,
+    checkPhone,
     ...restProps
   } = props;
 
@@ -63,7 +66,11 @@ export const InputVerify: FC<InputVerifyProps> = props => {
   // 处理验证码点击
   const handleCodeClick = () => {
     if (codeStatus) return;
-
+    // 有校验条件但是不通过
+    if (checkPhone && !checkPhone()) {
+      message.error('请输入正确手机号！');
+      return;
+    }
     sendCode && sendCode();
     setCodeStatus(true);
     handleCountDown(null, countDown as number);
