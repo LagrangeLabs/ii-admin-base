@@ -14,6 +14,8 @@ export default {
         'components/input-verify',
         'components/select-search',
         'components/my-upload',
+        'components/myTree',
+        'components/searchTree',
       ],
     },
   ],
