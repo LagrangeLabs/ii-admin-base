@@ -11,18 +11,19 @@ export interface ISuyTreeProps extends TreeProps {
   keyField: string;
   /** 需要加工的children字段 */
   childrenField: string;
+  /** icon图标 */
+  iconTag?: React.ReactNode;
 }
 
-const SuyTree: FC<ISuyTreeProps> = props => {
+const MyTree: FC<ISuyTreeProps> = props => {
   const {
     treeData,
     titleField,
     keyField,
     childrenField,
+    iconTag,
     ...extraProps
   } = props;
-
-  console.log(extraProps);
 
   const computeTree = (
     treeData: DataNode[],
@@ -32,6 +33,7 @@ const SuyTree: FC<ISuyTreeProps> = props => {
   ): DataNode[] => {
     return treeData.map((item: any) => ({
       title: item[`${titleField}`],
+      icon: iconTag,
       key: item[keyField],
       children: item[`${childrenField}`]
         ? computeTree(
@@ -51,11 +53,11 @@ const SuyTree: FC<ISuyTreeProps> = props => {
   return <Tree treeData={memoTreeData} {...extraProps} />;
 };
 
-SuyTree.defaultProps = {
+MyTree.defaultProps = {
   treeData: [],
   titleField: 'name',
   keyField: 'id',
   childrenField: 'children',
 };
 
-export default SuyTree;
+export default MyTree;

@@ -1,14 +1,15 @@
 ---
-title: SuyTree 树结构组件
+title: MyTree 树结构组件
 ---
 
-# SuyTree 树结构组件
+# MyTree 树结构组件
 
 Demo:
 
 ```tsx
 import React from 'react';
-import { SuyTree } from 'ii-admin-base';
+import { MyTree } from 'ii-admin-base';
+import { CarryOutOutlined } from '@ant-design/icons';
 
 const treeData = [
   {
@@ -55,11 +56,13 @@ const treeData = [
 ];
 
 export default () => (
-  <SuyTree
+  <MyTree
     treeData={treeData}
     titleField="hhh"
     keyField="lll"
     childrenField="kkk"
+    iconTag={<CarryOutOutlined />}
+    showIcon={true}
   />
 );
 ```
