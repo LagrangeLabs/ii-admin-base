@@ -25,13 +25,14 @@ export default () => {
 
 <!-- <API src='../../src/IUpload/index.tsx'></API> -->
 
-| 属性         | 说明                      | 类型                                        | 默认值 | 版本 |
-| ------------ | ------------------------- | ------------------------------------------- | ------ | ---- |
-| multiple     | multiple 是否支持多个上传 | boolean                                     |        |      |
-| describe     | describe 描述文案         | string \| ReactNode \|(string\|ReactNode)[] |        |      |
-| extra        | extra 额外描述文案        | string \| ReactNode \|(string\|ReactNode)[] |        |      |
-| onChange     | onChange 回调方法         | (params: any) => void                       |        |      |
-| style        | 自定义样式                | CSSProperties                               |        |      |
-| iconFontSize | iconFontSize 上传图标大小 | number                                      |        |      |
+| 属性         | 说明                                                                                                                                                                                                                             | 类型                                        | 默认值      | 是否必传 | 版本 |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ----------- | -------- | ---- |
+| multiple     | multiple 是否支持多个上传                                                                                                                                                                                                        | boolean                                     | true        | 否       |      |
+| describe     | describe 描述文案                                                                                                                                                                                                                | string \| ReactNode \|(string\|ReactNode)[] |             | 否       |      |
+| extra        | extra 额外描述文案                                                                                                                                                                                                               | string \| ReactNode \|(string\|ReactNode)[] |             | 否       |      |
+| onChange     | onChange 回调方法                                                                                                                                                                                                                | (params: any) => void                       |             | 否       |      |
+| beforeUpload | 上传文件之前的钩子，参数为上传的文件，若返回 false 则停止上传。支持返回一个 Promise 对象，Promise 对象 reject 时则停止上传，resolve 时开始上传（ resolve 传入 File 或 Blob 对象则上传 resolve 传入对象）。注意：IE9 不支持该方法 | (params: any) => any                        | () => false | 否       |      |
+| style        | 自定义样式                                                                                                                                                                                                                       | CSSProperties                               |             | 否       |      |
+| iconFontSize | iconFontSize 上传图标大小                                                                                                                                                                                                        | number                                      | 28          | 否       |      |
 
 More skills for writing demo: https://d.umijs.org/guide/demo-principle
