@@ -17,6 +17,7 @@ interface IUpload {
   onChange?: (params: any) => void;
   /** 上传文件之前的钩子，参数为上传的文件，若返回 false 则停止上传。支持返回一个 Promise 对象，Promise 对象 reject 时则停止上传，resolve 时开始上传（ resolve 传入 File 或 Blob 对象则上传 resolve 传入对象）。注意：IE9 不支持该方法 */
   beforeUpload?: (params: any) => any;
+  /** 自定义样式 */
   style?: CSSProperties;
   /** iconFontSize 上传图标大小 */
   iconFontSize?: number;
