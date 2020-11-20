@@ -3,6 +3,8 @@ import { Select, Spin } from 'antd';
 import debounce from 'lodash/debounce';
 
 const { Option } = Select;
+
+import { KeyValueObj } from '../interface';
 /**
  * SearchProps properties
  */
@@ -17,6 +19,10 @@ export interface SearchProps {
   onChange?: (params: any) => any;
   /** mode 多选、单选 */
   mode?: 'multiple' | 'tags' | undefined;
+  /** select.option 的key字段，默认为key */
+  optionKey?: string;
+  /** select.option 的value字段，默认为value */
+  optionValue?: string;
   /** placeholder 提示信息 */
   placeholder?: string;
   /** itemStyle select样式 */
@@ -38,7 +44,7 @@ export default class UserRemoteSelect extends React.Component<SearchProps> {
   }
 
   state = {
-    data: [],
+    options: [],
     value: [],
     fetching: false,
   };
@@ -58,18 +64,18 @@ export default class UserRemoteSelect extends React.Component<SearchProps> {
     const { fetchOption, getParams, getOption, onChange } = this.props;
     this.lastFetchId += 1;
     const fetchId = this.lastFetchId;
-    this.setState({ data: [], fetching: true });
-    const params = getParams && getParams(value);
+    this.setState({ options: [], fetching: true });
+    const params = (getParams && getParams(value)) || value;
     if (fetchOption) {
       fetchOption(params).then((body: any) => {
         if (fetchId !== this.lastFetchId) {
           // for fetch callback order
           return;
         }
-        const data = getOption && getOption(body);
-        const updateData: any = { data, fetching: false };
+        const options = (getOption && getOption(body)) || body;
+        const updateData: any = { options, fetching: false };
         if (updateStateFlag) {
-          const item = data.find((itemEach: any) => itemEach.key === value);
+          const item = options.find((itemEach: any) => itemEach.key === value);
           if (item) {
             item.label = item.key;
             updateData.value = item;
@@ -90,14 +96,21 @@ export default class UserRemoteSelect extends React.Component<SearchProps> {
     }
     this.setState({
       value,
-      data: [],
+      options: [],
       fetching: false,
     });
   };
 
   render() {
-    const { fetching, data, value } = this.state;
-    const { mode, placeholder, itemStyle, ...restProps } = this.props;
+    const { fetching, options, value } = this.state;
+    const {
+      mode,
+      placeholder,
+      itemStyle,
+      optionKey = 'key',
+      optionValue = 'value',
+      ...restProps
+    } = this.props;
     return (
       <Select
         mode={mode}
@@ -112,9 +125,9 @@ export default class UserRemoteSelect extends React.Component<SearchProps> {
         showSearch
         {...restProps}
       >
-        {data.map((item: any) => (
-          <Option key={item.value || item} value={item.value || item}>
-            {item.key || item}
+        {options.map((item: KeyValueObj) => (
+          <Option key={item[optionValue]} value={item[optionValue]}>
+            {item[optionKey]}
           </Option>
         ))}
       </Select>

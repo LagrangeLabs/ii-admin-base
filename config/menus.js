@@ -13,8 +13,9 @@ export default {
       children: [
         'components/input-verify',
         'components/select-search',
-        'components/my-upload',
+        'components/iupload',
         'components/searchTree',
+        'components/iSelectTree',
       ],
     },
   ],
