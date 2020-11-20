@@ -15,6 +15,7 @@ export default {
         'components/select-search',
         'components/my-upload',
         'components/searchTree',
+        'components/iSelectTree',
       ],
     },
   ],
