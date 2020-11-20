@@ -64,3 +64,12 @@ export default () => (
   />
 );
 ```
+
+### ISelectTree props 说明
+
+| 属性          | 说明                     | 类型                                                                                | 默认值   | 是否必传 | 版本 |
+| ------------- | ------------------------ | ----------------------------------------------------------------------------------- | -------- | -------- | ---- |
+| treeData      | 原始数组                 | array<{value, title, children, [disabled, disableCheckbox, selectable, checkable]}> | []       | 否       |      |
+| titleField    | 需要加工的 title 字段    | string                                                                              | name     | 否       |      |
+| keyField      | 需要加工的 keyField 字段 | string                                                                              | id       | 否       |      |
+| childrenField | 需要加工的 children 字段 | string                                                                              | children | 否       |      |
