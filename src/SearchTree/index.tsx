@@ -1,4 +1,4 @@
-import React, { useState, FC, useEffect, useMemo } from 'react';
+import React, { useState, FC, useEffect, useMemo, memo } from 'react';
 import { Tree, Input } from 'antd';
 import { DataNode, TreeProps } from 'antd/lib/tree';
 import 'antd/dist/antd.css';
@@ -14,7 +14,7 @@ export interface ISuyTreeProps extends TreeProps {
   /** 需要加工的children字段 */
   childrenField: string;
   /** icon图标 */
-  iconTag?: React.ReactNode;
+  iconTag?: React.ReactNode | Array<any> | any;
   /** 是否显示搜索 */
   showSearch?: boolean;
 }
@@ -35,8 +35,15 @@ const SearchTree: FC<ISuyTreeProps> = props => {
   const [expandedKeys, setExpandedKeys] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [autoExpandParent, setAutoExpandParent] = useState(true);
+  const [indexPath, setIndexPath] = useState([]);
+
+  /** 副作用 */
+
+  /** 副作用结束 */
 
   /** 对树的字段进行加工 */
+  const iconIsArray = Array.isArray(iconTag);
+  let count: number = 0;
   const computeTree = (
     treeData: DataNode[],
     titleField: string,
@@ -45,7 +52,7 @@ const SearchTree: FC<ISuyTreeProps> = props => {
   ): DataNode[] => {
     return treeData.map((item: any) => ({
       title: item[`${titleField}`],
-      icon: iconTag,
+      icon: iconIsArray ? iconTag[count++] : iconTag,
       key: item[keyField],
       children: item[`${childrenField}`]
         ? computeTree(
@@ -59,6 +66,7 @@ const SearchTree: FC<ISuyTreeProps> = props => {
   };
 
   const memoTreeData = useMemo(() => {
+    // const iconIsArray = Array.isArray(iconTag)
     return computeTree(treeData, titleField, keyField, childrenField);
   }, [treeData, titleField, keyField]);
 
