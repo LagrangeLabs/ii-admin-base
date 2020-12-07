@@ -1,7 +1,6 @@
 import React, { useState, FC, useEffect, useMemo, memo } from 'react';
 import { Tree, Input } from 'antd';
 import { DataNode, TreeProps } from 'antd/lib/tree';
-import 'antd/dist/antd.css';
 import './index.css';
 
 export interface ISuyTreeProps extends TreeProps {
@@ -17,6 +16,8 @@ export interface ISuyTreeProps extends TreeProps {
   iconTag?: React.ReactNode | Array<any> | any;
   /** 是否显示搜索 */
   showSearch?: boolean;
+  /** search tree 间距 */
+  gap?: number;
 }
 
 const { Search } = Input;
@@ -29,6 +30,7 @@ const SearchTree: FC<ISuyTreeProps> = props => {
     childrenField,
     iconTag,
     showSearch,
+    gap,
     ...extraProps
   } = props;
 
@@ -159,7 +161,7 @@ const SearchTree: FC<ISuyTreeProps> = props => {
     <div>
       {showSearch && (
         <Search
-          style={{ marginBottom: 8 }}
+          style={{ marginBottom: gap || 8 }}
           placeholder="Search"
           onChange={onChange}
         />
