@@ -7,11 +7,11 @@ export interface ISuyTreeProps extends TreeProps {
   /** 树结构数据 */
   treeData: DataNode[];
   /** 需要加工的title字段 */
-  titleField: string;
+  titleField?: string;
   /** 需要加工的key字段 */
-  keyField: string;
+  keyField?: string;
   /** 需要加工的children字段 */
-  childrenField: string;
+  childrenField?: string;
   /** icon图标 */
   iconTag?: React.ReactNode | Array<any> | any;
   /** 是否显示搜索 */
@@ -52,9 +52,11 @@ const SearchTree: FC<ISuyTreeProps> = props => {
     keyField: string,
     childrenField: string,
   ): DataNode[] => {
+    const icon = iconIsArray ? iconTag[count] : iconTag;
+    count += 1;
     return treeData.map((item: any) => ({
       title: item[`${titleField}`],
-      icon: iconIsArray ? iconTag[count++] : iconTag,
+      icon: icon,
       key: item[keyField],
       children: item[`${childrenField}`]
         ? computeTree(
