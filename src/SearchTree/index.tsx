@@ -25,9 +25,9 @@ const { Search } = Input;
 const SearchTree: FC<ISuyTreeProps> = props => {
   const {
     treeData,
-    titleField,
-    keyField,
-    childrenField,
+    titleField = 'name',
+    keyField = 'id',
+    childrenField = 'children',
     iconTag,
     showSearch,
     gap,
