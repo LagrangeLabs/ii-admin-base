@@ -15,6 +15,8 @@ const treeData = [
   {
     hhh: '0-0',
     lll: '0-0',
+    selectable: false,
+    disabled: true,
     kkk: [
       {
         hhh: '0-0-0',
@@ -37,6 +39,8 @@ const treeData = [
       {
         hhh: '0-0-2',
         lll: '0-0-2',
+        selectable: false,
+        disabled: true,
       },
     ],
   },

@@ -54,19 +54,23 @@ const SearchTree: FC<ISuyTreeProps> = props => {
   ): DataNode[] => {
     const icon = iconIsArray ? iconTag[count] : iconTag;
     count += 1;
-    return treeData.map((item: any) => ({
-      title: item[`${titleField}`],
-      icon: icon,
-      key: item[keyField],
-      children: item[`${childrenField}`]
-        ? computeTree(
-            item[`${childrenField}`],
-            titleField,
-            keyField,
-            childrenField,
-          )
-        : [],
-    }));
+    return treeData.map((item: any) => {
+      const {
+        [titleField]: titleProp,
+        [keyField]: keyProp,
+        [childrenField]: childrenProp,
+        ...rest
+      } = item;
+      return {
+        title: titleProp,
+        icon: icon,
+        key: keyProp,
+        ...rest,
+        children: childrenProp
+          ? computeTree(childrenProp, titleField, keyField, childrenField)
+          : [],
+      };
+    });
   };
 
   const memoTreeData = useMemo(() => {
@@ -129,9 +133,10 @@ const SearchTree: FC<ISuyTreeProps> = props => {
 
   const loop = (data: any) =>
     data.map((item: any) => {
-      const index = item.title.indexOf(searchValue);
-      const beforeStr = item.title.substr(0, index);
-      const afterStr = item.title.substr(index + searchValue.length);
+      const { title: titleProp, key, icon, children, ...rest } = item;
+      const index = titleProp.indexOf(searchValue);
+      const beforeStr = titleProp.substr(0, index);
+      const afterStr = titleProp.substr(index + searchValue.length);
       const title =
         index > -1 ? (
           <span>
@@ -140,21 +145,23 @@ const SearchTree: FC<ISuyTreeProps> = props => {
             {afterStr}
           </span>
         ) : (
-          <span>{item.title}</span>
+          <span>{titleProp}</span>
         );
-      if (item.children) {
+      if (children) {
         return {
           title,
-          key: item.key,
-          icon: item.icon,
-          children: loop(item.children),
+          key,
+          icon,
+          ...rest,
+          children: loop(children),
         };
       }
 
       return {
         title,
-        key: item.key,
-        icon: item.icon,
+        key,
+        icon,
+        ...rest,
       };
     });
   /** 搜索树结束 */
