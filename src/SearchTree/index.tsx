@@ -45,15 +45,14 @@ const SearchTree: FC<ISuyTreeProps> = props => {
 
   /** 对树的字段进行加工 */
   const iconIsArray = Array.isArray(iconTag);
-  let count: number = 0;
   const computeTree = (
     treeData: DataNode[],
     titleField: string,
     keyField: string,
     childrenField: string,
+    deepLen: number,
   ): DataNode[] => {
-    const icon = iconIsArray ? iconTag[count] : iconTag;
-    count += 1;
+    const icon = iconIsArray ? iconTag[deepLen] : iconTag;
     return treeData.map((item: any) => {
       const {
         [titleField]: titleProp,
@@ -67,7 +66,13 @@ const SearchTree: FC<ISuyTreeProps> = props => {
         key: keyProp,
         ...rest,
         children: childrenProp
-          ? computeTree(childrenProp, titleField, keyField, childrenField)
+          ? computeTree(
+              childrenProp,
+              titleField,
+              keyField,
+              childrenField,
+              deepLen + 1,
+            )
           : [],
       };
     });
@@ -75,7 +80,7 @@ const SearchTree: FC<ISuyTreeProps> = props => {
 
   const memoTreeData = useMemo(() => {
     // const iconIsArray = Array.isArray(iconTag)
-    return computeTree(treeData, titleField, keyField, childrenField);
+    return computeTree(treeData, titleField, keyField, childrenField, 0);
   }, [treeData, titleField, keyField]);
 
   /** 搜索树开始 */
