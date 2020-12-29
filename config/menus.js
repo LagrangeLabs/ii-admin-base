@@ -11,6 +11,7 @@ export default {
     {
       title: '数据录入组件',
       children: [
+        'components/code-mirror',
         'components/input-verify',
         'components/select-search',
         'components/iupload',
