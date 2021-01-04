@@ -93,7 +93,7 @@ export const Cron: React.FC<TProps> = props => {
   };
 
   return (
-    <div className="cron" style={style}>
+    <div className="ii-cron-container" style={style}>
       <Tabs activeKey={currentTab} onChange={setCurrentTab} tabPosition="left">
         <TabPane tab="秒" key="1">
           <SecondPane value={second} onChange={setSecond} />
@@ -117,7 +117,7 @@ export const Cron: React.FC<TProps> = props => {
           <YearPane value={year} onChange={setYear} />
         </TabPane>
       </Tabs>
-      <div className="footer">
+      <div className="ii-cron-footer">
         {/* <Button style={{ marginRight: 10 }} onClick={parse}>
           解析到UI
         </Button> */}
