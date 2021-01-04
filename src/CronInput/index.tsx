@@ -5,6 +5,7 @@ import Cron from './cron';
 type TProps = {
   style?: React.CSSProperties;
   inputStyle?: React.CSSProperties;
+  onChange?: (params: any) => void;
 };
 
 export const CronInput: React.FC<TProps> = props => {
