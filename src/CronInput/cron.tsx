@@ -17,7 +17,7 @@ import DayPane from './components/DayPane';
 import WeekPane from './components/WeekPane';
 import MonthPane from './components/MonthPane';
 import YearPane from './components/YearPane';
-import styles from './index.less';
+import './index.less';
 
 type TProps = {
   style?: React.CSSProperties;
@@ -93,7 +93,7 @@ export const Cron: React.FC<TProps> = props => {
   };
 
   return (
-    <div className={styles.cron} style={style}>
+    <div className="cron" style={style}>
       <Tabs activeKey={currentTab} onChange={setCurrentTab} tabPosition="left">
         <TabPane tab="秒" key="1">
           <SecondPane value={second} onChange={setSecond} />
@@ -117,7 +117,7 @@ export const Cron: React.FC<TProps> = props => {
           <YearPane value={year} onChange={setYear} />
         </TabPane>
       </Tabs>
-      <div className={styles.footer}>
+      <div className="footer">
         {/* <Button style={{ marginRight: 10 }} onClick={parse}>
           解析到UI
         </Button> */}
