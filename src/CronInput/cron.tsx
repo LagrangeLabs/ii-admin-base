@@ -22,11 +22,11 @@ import './index.less';
 type TProps = {
   style?: React.CSSProperties;
   value: string;
-  onChange?: (value: string) => void;
+  onOk?: (value: string) => void;
 };
 
 export const Cron: React.FC<TProps> = props => {
-  const { style, value, onChange } = props;
+  const { style, value, onOk } = props;
   const [currentTab, setCurrentTab] = useState('1');
   const [second, setSecond] = useState('*');
   const [minute, setMinute] = useState('*');
@@ -75,8 +75,8 @@ export const Cron: React.FC<TProps> = props => {
     }
   };
   const generate = () => {
-    if (onChange) {
-      onChange([second, minute, hour, day, month, week, year].join(' '));
+    if (onOk) {
+      onOk([second, minute, hour, day, month, week, year].join(' '));
     }
   };
   const changeDay = (v: string) => {
