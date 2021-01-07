@@ -31,10 +31,11 @@ const SearchTree: FC<ISuyTreeProps> = props => {
     iconTag,
     showSearch,
     gap,
+    defaultExpandedKeys = [],
     ...extraProps
   } = props;
 
-  const [expandedKeys, setExpandedKeys] = useState([]);
+  const [expandedKeys, setExpandedKeys] = useState(defaultExpandedKeys);
   const [searchValue, setSearchValue] = useState('');
   const [autoExpandParent, setAutoExpandParent] = useState(true);
   const [indexPath, setIndexPath] = useState([]);
