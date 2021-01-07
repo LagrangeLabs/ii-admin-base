@@ -5,14 +5,18 @@ import Cron from './cron';
 type TProps = {
   style?: React.CSSProperties;
   inputStyle?: React.CSSProperties;
-  onChange?: (params: any) => void;
+  value?: string;
+  onChange?: (params: string) => void;
 };
 
 export const CronInput: React.FC<TProps> = props => {
-  const { style, inputStyle, ...passThroughProps } = props;
-  const [value, setValue] = useState('');
+  const { style, inputStyle, value, onChange, ...passThroughProps } = props;
+  const [CronValue, setValue] = useState('');
   const [visible, setVisible] = useState(false);
-  const onChange = (value: string) => {
+  const onOk = (value: string) => {
+    if (onChange) {
+      onChange(value);
+    }
     setValue(value);
     setVisible(false);
   };
@@ -26,9 +30,9 @@ export const CronInput: React.FC<TProps> = props => {
         placement="bottomLeft"
         onVisibleChange={handleVisibleChange}
         visible={visible}
-        overlay={<Cron onChange={onChange} value={value} style={style} />}
+        overlay={<Cron onOk={onOk} value={CronValue} style={style} />}
       >
-        <Input value={value} style={inputStyle} {...passThroughProps} />
+        <Input value={CronValue} style={inputStyle} {...passThroughProps} />
       </Dropdown>
     </div>
   );
