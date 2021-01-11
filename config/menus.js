@@ -6,7 +6,7 @@ export default {
     },
     {
       title: '展示组件',
-      children: ['components/highlight-card'],
+      children: ['components/highlight-card', 'components/polyline-dynamic'],
     },
     {
       title: '数据录入组件',
