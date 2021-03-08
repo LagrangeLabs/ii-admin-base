@@ -49,14 +49,17 @@
     }
   },
   "dependencies": {
-    "codemirror": "^5.59.0"
+    "@types/react-slick": "^0.23.4",
+    "codemirror": "^5.59.0",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1"
   },
   "peerDependencies": {
     "@ant-design/icons": ">=4.2.0",
     "antd": ">=4.7.0",
+    "classnames": ">=2.2.0",
     "lodash": ">=4.17.0",
-    "react": ">=16.8.0",
-    "classnames": ">=2.2.0"
+    "react": ">=16.8.0"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.2.2",
