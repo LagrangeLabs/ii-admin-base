@@ -14,6 +14,7 @@ export default () => {
   const carouselImages = [
     'https://www.keaidian.com/uploads/allimg/190604/04221240_21.jpg',
     'https://www.keaidian.com/uploads/allimg/190604/04221240_21.jpg',
+    'https://bdy.dangbei.net/vod/f3pn.mp4',
   ];
 
   return (
