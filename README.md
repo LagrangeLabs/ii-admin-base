@@ -8,7 +8,6 @@ ii-admin-base(中后台基础组件库)，主要存放各个业务线都可复�
 
 ```JavaScript
 import { InputVerfiy } from 'ii-admin-base'
-import 'antd/dist/antd.css'
 ```
 
 #### 组件单元测试

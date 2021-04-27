@@ -3,7 +3,7 @@ import { TreeSelect } from 'antd';
 import { TreeSelectProps } from 'antd/lib/tree-select';
 import { DataNode } from 'antd/lib/tree';
 
-interface ITreeSelectProps {
+interface ITreeSelectProps extends TreeSelectProps<any> {
   /** 树结构数据 */
   treeData: any;
   /** 需要加工的title字段 */
