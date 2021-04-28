@@ -1,6 +1,6 @@
 {
   "name": "ii-admin-base",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
