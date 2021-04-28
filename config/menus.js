@@ -9,7 +9,7 @@ export default {
       children: [
         'components/highlight-card',
         'components/polyline-dynamic',
-        'components/image-carousel',
+        // 'components/image-carousel',
       ],
     },
     {
