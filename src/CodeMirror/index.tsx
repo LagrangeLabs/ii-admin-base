@@ -25,7 +25,7 @@ type IProps = {
 
 export const CodeMirrorF: React.FC<IProps> = props => {
   const { getCodeInstance, style, getValueFlag, options, className } = props;
-  const textareaRef = useRef(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const prevFlag = useRef(false);
 
   useEffect(() => {
