@@ -1,11 +1,11 @@
 export default {
-  // cjs: 'babel',
-  // esm: {
-  //   type: 'babel',
-  //   importLibToEs: true,
-  // },
-  esm: 'rollup',
-  cjs: 'rollup',
+  cjs: 'babel',
+  esm: {
+    type: 'babel',
+    importLibToEs: true,
+  },
+  // esm: 'rollup',
+  // cjs: 'rollup',
   umd: {},
   extraBabelPlugins: [
     [
